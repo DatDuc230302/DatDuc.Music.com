@@ -1,0 +1,1087 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+.open {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+
+/* main */
+#main {
+    width: 100%;
+    position: relative;
+}
+/* back-top */
+#main .back-top {
+    padding-top: 5px;
+    position: absolute;
+    width: 70px;
+    height: 60px;
+    background-color: red;
+    bottom: 0;
+    right: 30px;
+    position: fixed;
+    z-index: 1;
+    cursor: pointer;
+    outline: none;
+    opacity: 0.3;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#main .back-top span {
+    display: block;
+    margin-top: 10px;
+}
+
+#main .back-top:hover {
+    opacity: 1;
+    background-color: red;
+}
+
+/* back-top end */
+/* main end */
+/* header */
+#head {
+    position: fixed;
+    width: 100%;
+    padding:0 3%;
+    z-index: 5;
+}
+
+.header {
+    width: 100%;
+    height: 72px;
+    background-color: rgba(78, 72, 72, 0.3);
+    background-color: black;
+}
+
+.header img {
+    height: 100%;
+}
+
+/* header-logo */
+.header .logo {
+    padding-left: 40px;
+    height: 72px;
+    width: 120px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 60px;
+    width: 60px;
+}
+
+.header .logo img:hover {
+    transform: rotate(50000deg);
+    transition: all 25s ease;
+}
+
+
+
+/* header-logo */
+
+/* list-item*/
+.header .list-item {
+    display: inline-block;
+    float: left;
+}
+.list-item li {
+    display: inline-block;
+    padding: 0 20px;
+}
+.list-item > li > a {
+    text-decoration: none;
+    line-height: 72px;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: rgb(165, 154, 154);
+    position: relative;
+}
+.list-item li > a:hover{
+    color: white;
+    opacity: 1;
+}
+.list-item li a::after {
+    content: "";
+    width: 0;
+    position: absolute;
+    transition: all .25s ease-in-out;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+}
+.list-item li > a:hover::after {
+    width: 100%;
+}
+
+/* sub-albums */
+
+.albums a {
+    position: relative;
+}
+
+.albums > a::before {
+    opacity: 1;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    right: -12px;
+    top: -6px;
+    border-radius: 10px;
+}
+
+
+.list-item .sub-albums {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 700px;
+    background-color: rgb(83, 73, 73);
+    z-index: 1;
+    transition: opacity 0.25s linear , visibility .25s linear;
+    padding-left: 17%;
+    padding-right: 10%;
+}
+.list-item .albums:hover .sub-albums{
+    visibility: visible;
+    opacity: 1;
+}
+
+.sub-albums .col-sub-albums {
+    width: 25%;
+    float: left;
+    height: 100%;
+
+}
+
+.sub-albums .col-sub-albums img {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: .3s ease;
+}
+
+.sub-albums .col-sub-albums img:hover {
+    transform: scale(0.9);
+}
+
+.sub-albums .col-sub-albums img:hover {
+    opacity: 0.6;
+}
+
+.sub-albums .col-sub-albums p {
+    text-align: center;
+    width: 120px;
+    color: black;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.sub-albums .col-sub-albums span {
+    width: 120px;
+    text-align: center;
+    color: #ccc;
+    display: block;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+/* sub-albums end */
+
+/* list-item end */
+
+/* Log-in */
+.header .log-in {
+    width: 200px;
+    height: 72px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(26, 24, 24, 0.3);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.show {
+    display: flex !important;
+    align-items: center !important;
+    display: inline-block;
+}
+
+.log-in .btn-login {
+    padding: 15px 30px;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #ccc;
+    font-size: 16px;
+}
+
+.log-in .btn-login:hover {
+    background-color: rgb(148, 138, 138);
+}
+
+.log-in .user {
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.log-in .user img {
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.log-in .user img:hover {
+    transform: scale(1.3);
+    transition: all .25s ease;
+}
+
+.log-in .user p:hover{
+    color: purple;
+}
+
+.log-in .user p {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.log-in .user i {   
+    margin-left: 5px;
+}
+
+
+.user .user-settings {
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    background-color: #432275;
+    top: 74px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease;
+}
+
+.user-settings ul {
+    width: 100%;
+    border-bottom: 1px solid #dadada;
+}
+
+.user-settings li {
+    list-style: none;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.user-settings li a:hover {
+    color: rgb(128, 16, 113);
+}
+
+.user-settings li a {
+    color: #DADADA;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.user-settings li a i {
+    font-size: 20px;
+}
+
+.user-settings .bell {
+    position: relative;
+}
+
+.user-settings .bell::after {
+    top: 10px;
+    right: 60px;
+    border-radius: 10px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+}
+
+
+
+/* Log-in */
+
+/* list-item-social */
+
+.list-item-social {
+    margin-right: 30px;
+    display: inline-block;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+}
+
+.list-item-social li {
+    display: inline-block;
+    list-style: none;
+}
+
+.list-item-social li {
+    padding: 0 10px;
+}
+
+.list-item-social li a {
+    text-decoration: none;
+}
+
+.list-item-social li i {
+    color: white;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: rgba(36, 33, 33, 0.3);
+}
+
+.list-item-social li .ti-facebook:hover , .ti-twitter:hover , .ti-instagram:hover {
+    background-color: rgb(49, 49, 175);
+    transition: all .1s linear;
+}
+
+.list-item-social li .ti-youtube:hover , .ti-tumblr-alt:hover {
+    background-color: rgb(230, 47, 47);
+    transition: all .1s linear;
+}
+/* list-item-social end */
+
+
+
+
+/* header end */
+/* section-1 */
+#section-1 {
+    width: 100%;
+    height: 763px;
+    position: relative;
+}
+/* side-bar */
+#section-1 .side{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section-1 .side-bar {
+    border-radius: 5px;
+    margin-top: 72px;
+    position: fixed;
+    z-index: 2;
+    position: absolute;
+    width: 200px;
+    height: 600px;
+    background-color: rgb(30,21,47);
+    cursor: pointer;
+    transform: translateX(-200px);
+    padding: 0 20px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+}
+
+.side-barshow {
+    transform: translateX(0) !important;
+    transition: all .5s ease-in-out;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+.side .btn-sidebar {
+    margin-left: 10px;
+    font-size: 50px;
+    cursor: pointer;
+    color: rebeccapurple;
+    display: block;
+}
+
+.side .btn-sidebar:hover {
+    transform: translateX(10px);
+    transition: all .5s ease-in;
+}
+
+
+.side-bar ul {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+    border-bottom: 1px solid #ccc ;
+}
+
+.side-bar li {
+    font-size: 18px;
+    padding: 15px 0;
+    padding-left: 30px;
+    width: 100%;
+    display: block;
+}
+
+.side-bar li a {
+    text-decoration: none;
+    color: white;
+}
+
+.side-bar li a:hover {
+    color: rgb(170, 163, 163);
+}
+
+
+
+
+
+/* side-bar end */
+
+
+#section-1 .background-section-1 img {
+    width: 100%;
+    height: 763px;
+}
+
+#section-1 .btn-section-1 {
+    width: 100%;
+    position: absolute;
+    bottom: 160px;
+    text-align: center;
+}
+
+.btn-section-1 .btn {
+    text-decoration: none;
+    color: white;
+    padding: 20px 100px;
+    background-color: #2681f7;
+    margin: 0 20px;
+    font-size: 16px;
+    border-radius: 35px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.btn-section-1 .btn::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 1, 1, 0.3);
+    border-radius: 35px;
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.btn-section-1 .btn::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 1, 1, 0.3);
+    border-radius: 35px;
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.btn-section-1 .btn:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+.btn-section-1 .btn:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+.btn-section-1 .btn:hover {
+    background-color: #1d61b9;
+}
+
+#section-1 > img {
+    width: 100%;
+}
+
+#section-1 > img:hover {
+    margin-top: 20px;
+}
+
+/* section-1 end */
+/* music-albums */
+#music-albums {
+    width: 100%;
+    height: 600px;
+    padding: 72px 5% 0 5%;
+    background-color: rgb(20, 7, 46);
+    overflow: hidden;
+}
+
+#music-albums .box-music {
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    position: relative;
+}
+
+.box-music .btn-music {
+    width: 100%;
+    height: 30px;
+}
+
+.btn-purple {
+    background-color: #8112b4 !important;
+    border: 1px solid #8112b4 !important;
+}
+
+
+.btn-music .btn {
+    border: 1px solid #525252;
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 20px;
+    float: left;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    margin-right: 20px;
+    font-size: 14px;
+    position: relative;
+    user-select: none;
+}
+
+.btn-music a {
+    user-select: none;
+    text-decoration: none;
+    color: #525252;
+    float: right;
+    padding: 5px 20px;
+    font-size: 14px;
+}
+
+.btn-music a:hover {
+    color: #8112b4;
+}
+/* list-music */
+.box-music .list-music {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+
+.box-music .list-music .col {
+    width: 33.33333%;
+    float: left;
+}
+
+.box-music .list-music .col li {
+    list-style: none;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.list-music .col li:hover {
+    background-color: rgba(115, 96, 155, 0.5);
+}
+
+.list-music .col li:hover img {
+    transform: translateX(-15px);
+}
+
+.list-music .col img {
+    width: 87px;
+    height: 87px;
+    float: left;
+    margin-left: 30px;
+    transition: all .5s linear;
+    border-radius: 5px;
+}
+
+
+.list-music .author {
+    display: inline-block;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 150px;
+}
+
+.list-music .author span {
+    color: white;
+    font-size: 14px;
+    display: block;
+
+    margin-bottom: 10px;
+}
+
+.list-music .author a {
+    color: rgb(90, 86, 86);
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.list-music .author a:hover {
+    text-decoration: underline;
+    color: #8112b4;
+}
+
+.list-music .author p {
+    font-size: 12px;
+    color: rgb(90, 86, 86);
+}
+
+.list-music .col li .ti-more-alt {
+    color: white;
+    margin-left: 20px;
+    font-size: 20px;
+    display: none;
+    padding: 10px 10px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.list-music .col li .ti-more-alt:hover {
+    background-color: rgb(85, 30, 85);
+}
+
+.list-music .col li:hover .ti-more-alt {
+    display: block;
+
+}
+
+.bl-hidden {
+    opacity: 0 !important;
+    transform: translateX(-400px);
+    visibility: hidden;
+}
+
+.visible {
+    opacity: 1 !important;
+    transform: translateX(-800px);
+    visibility: visible !important;
+}
+/* list-music end */
+/* list-albums */
+.box-music .list-albums {
+    position: absolute;
+    top: 60px;
+    right: -900px;
+    width: 100%;
+    height: 100%;
+    padding-left: 90px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    visibility: hidden;
+}
+
+.box-music .list-albums li {
+    list-style: none;
+}
+
+.list-albums .col {
+    float: left;
+    width: 20%;
+}
+
+.list-albums .albums-item {
+    width: 193px;
+    height: 193px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: .3s ease;
+}
+
+.list-albums .albums-item:hover {
+   transform: scale(1.05);
+}
+
+.list-albums .albums-item span {
+    padding: 20px 20px;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.box-music .list-albums img {
+    transform: rotate(25deg);
+    height: 100px;
+    width: 100px;
+    bottom: -10px;
+    right: -20px;
+    position: absolute;
+}
+/* list-albums end */
+/* list-singer */
+.box-music .list-singers {
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 190px;
+    position: absolute;
+    transition: all 1s ease-in-out;
+    transform: translateX(500px);
+    top: 30px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.list-singers-visible {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+
+
+
+.list-singers > .col {
+    height: 100%;
+    width: 20.2%;
+    margin: 0 25px;
+    display: inline-block;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 0, rgb(41, 50, 48));
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.list-singers .img-singer {
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+
+
+.list-singers .img-singer > img {
+    opacity: 0.7;
+    border-radius: 50%;
+    transition: all .5s ease;
+}
+
+.list-singers .img-singer:hover > img {
+    transform: scale(1.1);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.list-singers .img-singer .info-singer {
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    bottom: 0;
+    padding-left: 30px;
+}
+
+.info-singer h1 {
+    color: rgb(255, 254, 254);
+    display: block;
+    font-size: 25px;
+}
+
+.info-singer .row-img {
+    margin-top: 5px;
+    width: 100%;
+    height: 50%;
+}
+
+.img-singer .info-singer .col {
+    width: 33.33333%;
+    float: left;
+    height: 100%;
+}
+
+.info-singer .col img {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+}
+
+.img-singer .play-controls {
+    height: 60%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-controls i {
+    margin-top: 60px;
+    display: inline-block;
+    font-size: 25px;
+    color: white;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+/* list-singer end*/
+/* music-albums end */
+
+
+/* play-game */
+#play-game {
+    width: 100%;
+    height: 600px;
+    background-color: rgba(255, 0, 0, 0.979);
+}
+
+.play-game-logo {
+    padding-top: 20px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.play-game-logo img {
+    width: 500px;
+    height: 500px;
+}
+
+.play-game-logo .btn-srg {
+    width: 80px;
+    height: 20px;
+    background-color: #525252;
+    border-radius: 10px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    position: absolute;
+    bottom: 50px;
+    left: 638px;
+}
+
+.btn-srg .turn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.turnOn {
+    transform: translateX(58px);
+    transition: all .25s ease-in-out;
+}
+
+.turnOff {
+    transform: translateX(0);
+    transition: all .25s ease-in-out;
+}
+
+.run {
+    width: 500px;
+    height: 500px;
+    transform: rotate(-72000deg) !important;
+    transition: all 99s ease;
+}
+/* end play-game */
+
+/* link-operator */
+#link-operator {
+    padding-top: 50px;
+    width: 100%;
+    height: 376px;
+    background-color: #CBCDCF;
+}
+
+#link-operator ul {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#link-operator li {
+    display: inline-block;
+    position: relative;
+}
+
+.list-link1 img {
+    display: inline-block;
+    padding: 0 10px;
+    position: relative;
+}
+
+.list-link1 p {
+    opacity: 0;
+}
+
+.list-link1 li:hover img{
+    transform: translateY(-10px);
+    transition: all .2s linear;
+}
+
+
+/* link-operator end */
+
+/* footer */
+#footer {
+    padding: 10% 5% 0 5%;
+    width: 100%;
+    height: 400px;
+    background-color: black;
+}
+
+#footer .footer-text {
+    width: 100%;
+    height: 80%;
+}
+
+.footer-text .footer-help {
+    width: 50%;
+    float: left;
+}
+
+.footer-help .col {
+    width: 33.33333%;
+    float: left;
+}
+
+.footer-help .col li {
+    padding: 7px 0;
+}
+
+.footer-help .col ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 1px;
+}
+
+.footer-help .col li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    transition: all .2s ease-in-out;
+}
+
+.footer-help .col li a:hover::after {
+    width: 100%;
+}
+
+.footer-text .footer-socials {
+    float: right;
+    height: 100%;
+    width: 50%;
+    text-align: right;
+}
+
+.footer-socials li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.footer-socials li a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+.footer-socials li a i {
+    padding: 10px 10px;
+    border-radius: 30px;
+}
+
+#footer .footer-cpr {
+    width: 100%;
+    text-align: center;
+}
+
+.footer-cpr span {
+    display: block;
+    color: #444444;
+    font-size: 13px;
+}
+/* footer end */
+
+/* anonymous */
+.anonymous {
+    display: none;
+}
+/* anonymous end */
